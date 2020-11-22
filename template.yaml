@@ -1,9 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  NaiveJavaRuntime
-
-  Sample SAM Template for NaiveJavaRuntime
+  Sample SAM Template for Lambda custom runtimes
 
 Globals:
   Function:
@@ -17,5 +15,18 @@ Resources:
       Handler: do.not.apply
       Runtime: provided
       MemorySize: 128
+    Metadata:
+      BuildMethod: makefile
+
+  FunqyAmazonLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: FunqyAmazonLambda
+      Handler: do.not.apply
+      Runtime: provided
+      MemorySize: 128
+      Environment:
+        Variables:
+          DISABLE_SIGNAL_HANDLERS: true
     Metadata:
       BuildMethod: makefile
