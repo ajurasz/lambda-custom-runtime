@@ -1,0 +1,1 @@
+Sample application for [https://ajurasz.github.io/2020-11-23-aws-lambda-custom-runtime/](https://ajurasz.github.io/2020-11-23-aws-lambda-custom-runtime/)
