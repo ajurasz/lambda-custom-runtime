@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  NaiveJavaRuntime
+
+  Sample SAM Template for NaiveJavaRuntime
+
+Globals:
+  Function:
+    Timeout: 10
+
+Resources:
+  NaiveJavaRuntimeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: NaiveJavaRuntime
+      Handler: do.not.apply
+      Runtime: provided
+      MemorySize: 128
+    Metadata:
+      BuildMethod: makefile
